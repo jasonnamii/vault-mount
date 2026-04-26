@@ -1,0 +1,45 @@
+{
+  "skill": "vault-mount",
+  "version": "v1.0",
+  "cases": [
+    {
+      "id": 1,
+      "name": "이미 마운트됨",
+      "trigger": "이어서 하자",
+      "expected_path": "trigger_hit -> ls Agent-Ops -> already_mounted -> 보고 1줄",
+      "expected_report": "✅ 볼트 이미 마운트됨",
+      "no_call": ["request_cowork_directory"]
+    },
+    {
+      "id": 2,
+      "name": "신규 마운트 성공",
+      "trigger": "볼트 마운트해줘",
+      "preconditions": "Agent-Ops 미존재",
+      "expected_path": "trigger_hit -> ls 실패 -> request_cowork_directory -> 성공 -> 보고",
+      "expected_report": "✅ 볼트 마운트 완료"
+    },
+    {
+      "id": 3,
+      "name": "마운트 거부 → outputs 폴백",
+      "trigger": "볼트 연결",
+      "preconditions": "사용자가 권한 팝업 거부",
+      "expected_path": "trigger_hit -> 호출 -> 거부 -> 보고 -> 작업 진행",
+      "expected_report": "⚠️ 볼트 마운트 실패 — outputs 폴백 진행",
+      "must_not": "STOP"
+    },
+    {
+      "id": 4,
+      "name": "P1 트리거 '경로' hit",
+      "trigger": "볼트 경로 확인해줘",
+      "expected_path": "trigger_hit (경로) -> 검증 -> 보고",
+      "verify": "경로 키워드가 P1에 등록됨"
+    },
+    {
+      "id": 5,
+      "name": "FS_ACCESS 폴백 — 코워크 실패 → 옵시디언 MCP",
+      "trigger": "옵시디언 노트 읽어줘",
+      "expected_path": "Cowork Read 실패 -> mcp__obsidian__read_note 시도",
+      "verify": "폴백 순서 ①→②→③ 준수"
+    }
+  ]
+}
