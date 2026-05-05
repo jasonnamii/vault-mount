@@ -9,7 +9,7 @@ P2: 마운트해줘, 연결해줘, 볼트 켜줘, 시작하자, 이어서 하자
 P3: vault mount, dropbox mount, obsidian vault, file system bootstrap, mount gateway, vault path resolve.
 P4: 세션 시작 직후, 작업 재개시, 파일 작업 직전, 글로벌 CLAUDE.md FS_ACCESS 폴백 적용시, 볼트 경로 조회시.
 P5: 마운트 결과 1줄 보고로.
-NOT: UP수정(→up-manager), 스킬생성(→skill-builder), 세션브리핑(→session-briefing), 산출물생성(→shaper-skill).
+NOT: UP수정(→up-manager), 스킬생성(→skill-builder), 세션브리핑(→session-briefing), 산출물생성(→paper-engine).
 ---
 
 # vault-mount
