@@ -1,15 +1,15 @@
 ---
 name: vault-mount
-description: "옵시디언 볼트(Dropbox) 자동 마운트·검증 게이트키퍼. 세션 시작·트리거 단어 감지 시 mcp__cowork__request_cowork_directory를 결정적으로 호출하고, 3단계 파일시스템 폴백(코워크 빌트인→옵시디언 MCP→Desktop Commander)을 강제. 마운트 실패시 1줄 보고 후 작업 진행(STOP ✗). UP §BOOTSTRAP과 이중 안전장치."
-version: v1.0
+description: "옵시디언 볼트(Dropbox) 자동 마운트 게이트키퍼. **모든 파일 작업·VAULT 접근·Read/Write/Edit/Bash 직전 자동선행**. 세션 첫 메시지·재개·이어서·resume·볼트·마운트·옵시디언·드롭박스·VAULT·파일·노트·메모·저장·읽기·쓰기·검색 등 트리거 hit 시 mcp__cowork__request_cowork_directory를 결정적 호출. 3단계 폴백(코워크 빌트인→옵시디언 MCP→Desktop Commander). 마운트 실패시 1줄 보고 후 outputs 폴백으로 작업 진행(STOP ✗). UP §BOOTSTRAP과 이중 안전장치. 권한 팝업 중복 ✗ — already_mounted 검증 스킵 내장."
+version: v1.1
 vault_dependency: required
 license: "Proprietary. LICENSE has complete terms."
-P1: 볼트마운트, vault mount, vault-mount, 볼트, 마운트, mount, 시작, resume, 이어서, 볼트연결, 볼트접속, 볼트확인, 옵시디언마운트, obsidian mount, 드롭박스마운트, 경로, 볼트경로, vault path.
-P2: 마운트해줘, 연결해줘, 볼트 켜줘, 시작하자, 이어서 하자, mount it, connect vault, 경로 확인.
-P3: vault mount, dropbox mount, obsidian vault, file system bootstrap, mount gateway, vault path resolve.
-P4: 세션 시작 직후, 작업 재개시, 파일 작업 직전, 글로벌 CLAUDE.md FS_ACCESS 폴백 적용시, 볼트 경로 조회시.
-P5: 마운트 결과 1줄 보고로.
-NOT: UP수정(→up-manager), 스킬생성(→skill-builder), 세션브리핑(→session-briefing), 산출물생성(→paper-engine).
+P1: 볼트마운트, 볼트, vault, vault mount, vault-mount, 마운트, mount, 자동마운트, 시작, 재개, resume, 이어서, 이어하자, 볼트연결, 볼트접속, 볼트확인, 볼트체크, 볼트경로, vault path, 옵시디언, 옵시디언볼트, obsidian, obsidian vault, 옵시디언마운트, obsidian mount, 드롭박스, dropbox, 드롭박스마운트, 경로, 경로확인, FS, FS_ACCESS, 파일시스템, file system, 파일접근, 노트접근, 볼트접근, vault access, BOOTSTRAP, 부트스트랩, 게이트키퍼, gatekeeper, 자동선행, 강제선행, 마운트선행, 선행마운트.
+P2: 마운트해줘, 연결해줘, 볼트 켜줘, 볼트 마운트해줘, 볼트 열어줘, 볼트 띄워줘, 볼트 붙여줘, 시작하자, 이어서 하자, 이어가자, 재개하자, 다시 시작, mount it, connect vault, mount vault, 경로 확인, 볼트 어디야, 볼트 경로, 볼트 잘 되나, 볼트 살아있나, 파일 접근 가능해, 노트 접근 가능해, VAULT 접근, 옵시디언 켜줘, 드롭박스 연결해줘.
+P3: vault mount, dropbox mount, obsidian vault mount, file system bootstrap, mount gateway, vault path resolve, request_cowork_directory, fs access bootstrap, mount precondition, fs precondition.
+P4: 세션 시작 직후 (첫 사용자 메시지), 작업 재개·이어서 시, **모든 파일 작업 직전 (Read/Write/Edit/Bash·옵시디언 노트·VAULT 접근)**, 글로벌 CLAUDE.md FS_ACCESS 폴백 적용시, 볼트 경로 조회·검증시, UP §BOOTSTRAP 미발동 의심시, 다른 스킬(up-manager·skill-builder·session-briefing·project-updater 등)이 VAULT 접근 직전.
+P5: 마운트 결과 1줄 보고로 (✅이미마운트 / ✅마운트완료 / ⚠️실패-폴백).
+NOT: UP수정(→up-manager), 스킬생성·수정(→skill-builder), 세션브리핑(→session-briefing), 프로젝트초기화(→project-updater), 산출물생성(→shaper-skill), 일반리서치(→research-skill).
 ---
 
 # vault-mount
