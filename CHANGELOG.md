@@ -1,5 +1,23 @@
 # CHANGELOG — vault-mount
 
+## v1.2 — 2026-05-07
+
+### Added
+- **PATH_TRIGGER (Rule 0)** — 절대 규칙 4개 → 5개로 확장. host 절대경로 패턴 hit 시 100% 강제발동, grep 우회·NOT 우회 ✗
+- P1 트리거: `/Users/jason/`, `/Users/jason/Library/CloudStorage/Dropbox/ObsidianVault`, `/Users/jason/Library/CloudStorage/Dropbox/ObsidianVault/`, `/Users/jason/ObsidianVault`, `/Users/jason/ObsidianVault/`, `~/`, `host절대경로`, `경로패턴`, `path pattern`, `absolute path`
+- ① 트리거 감지에 PATH_TRIGGER 최우선 블록 (정규식 `(/Users/jason/|~/)`)
+- WRONG/CORRECT 1쌍 추가 (PATH_TRIGGER 케이스)
+- 케이스 5: PATH_TRIGGER 절대경로 hit
+- 케이스 6: PATH_TRIGGER `~/` 별칭 hit
+
+### Changed
+- description에 v1.2 PATH_TRIGGER 1줄 명시
+- 절대 규칙 표 헤더 "4개" → "5개"
+- frontmatter version v1.1 → v1.2
+
+### Why
+- 형 메시지에 host 절대경로(`/Users/jason/...`)가 박힌 경우 = 100% 파일작업 신호. 단어 매칭 트리거(P1)는 grep 우회 가능 → Rule 0으로 격상하여 미발동 차단.
+
 ## v1.0 — 2026-04-26
 
 ### Added
@@ -26,4 +44,3 @@
   - ④-3 vault_dependency 미선언 → frontmatter 추가
   - ⑦-1 version 미선언 → frontmatter 추가
   - ⑦-2 INVARIANT 헤더 부재 → 절대규칙 헤더 강화
-
