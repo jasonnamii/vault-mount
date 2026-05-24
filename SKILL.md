@@ -1,6 +1,10 @@
 ---
 name: vault-mount
-description: "옵시디언 볼트 자동 마운트 게이트키퍼. 발동 트리거 2종 — (1) PATH_TRIGGER (Rule 0·100% 강제): 메시지에 `/Users/jason/` 또는 `~/` host 절대경로 hit, (2) 단어 트리거: '마운트'·'볼트'·'이어서' hit. 발동 시 mcp__cowork__request_cowork_directory 결정적 호출. 이미 마운트시 검증 후 스킵. 마운트 실패시 1줄 보고 + outputs 폴백·STOP ✗. UP §BOOTSTRAP과 이중 안전장치. NOT: UP수정(→up-manager), 스킬생성(→skill-builder), 세션브리핑(→session-briefing), 일반리서치(→research-skill)."
+description: |
+  옵시디언 볼트 자동 마운트 게이트키퍼. PATH_TRIGGER(`/Users/jason/`·`~/` 절대경로 hit) + 단어 트리거(마운트·볼트·이어서). 발동 시 mcp__cowork__request_cowork_directory 결정적 호출.
+  P1: 마운트, 볼트, 이어서, vault mount, cowork mount.
+  P2: 마운트해줘, 볼트 열어줘, 이어서 작업, resume work.
+  NOT: UP수정(→up-manager), 스킬생성(→skill-builder), 세션브리핑(→session-briefing), 일반리서치(→research-skill).
 version: v1.3
 vault_dependency: required
 license: "Proprietary. LICENSE has complete terms."
